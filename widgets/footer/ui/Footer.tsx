@@ -1,7 +1,10 @@
+import Link from "next/link"
+
 type ListItem = {
   id: number,
   name: string,
   value: number,
+  path: string,
 }
 
 const list: ListItem[] = [
@@ -9,16 +12,19 @@ const list: ListItem[] = [
     id: 1,
     name: 'characters',
     value: 826,
+    path: '/characters'
   },
   {
     id: 2,
     name: 'locations',
     value: 126,
+    path:'/',
   },
   {
     id: 3,
     name: 'episodes',
     value: 51,
+    path: '/'
   },
 ]
 
@@ -27,9 +33,9 @@ export const Footer = () => {
     <div className='relative bottom-0 w-full bg-[#202329] flex items-center justify-center h-[193px] flex-col'>
       <div className="flex gap-7">
         {list.map((item) => (
-          <div key={item.id}>
+          <Link href={item.path} key={item.id}>
             <span className="text-[#9E9E9E] text-[17px] font-bold">{item.name}:{item.value}</span>
-          </div>
+          </Link>
         ))}
       </div>
       <div className=" flex items-center justify-center gap-2 h-[30px]">
