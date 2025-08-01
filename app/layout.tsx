@@ -5,7 +5,6 @@ import "./globals.css";
 import {Header} from "@/widgets/header";
 
 
-
 import Footer from "@/widgets/footer/ui/Footer";
 import StoreProvider from "./store/store-provider";
 
@@ -35,6 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StoreProvider>
+          <Header/>
           {children}
           <Footer/>  
         </StoreProvider>
