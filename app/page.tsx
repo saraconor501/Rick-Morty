@@ -1,7 +1,9 @@
+import { MainList } from "@/widgets/main-list";
+
 export default async function Home() {
   return (
     <div>
-      <h1 className="text-[63px] text-white text-center">Главная страница</h1>
+      <MainList/>
     </div>
   );
 }
