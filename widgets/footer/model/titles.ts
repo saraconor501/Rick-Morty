@@ -16,13 +16,13 @@ export const Footerlist: ListItem[] = [
     id: 2,
     name: 'locations:',
     value: 123,
-    path:'/',
+    path:'/locations',
   },
   {
     id: 3,
     name: 'episodes:',
     value: 51,
-    path: '/'
+    path: '/episodes'
   },
   {
     id: 4,
