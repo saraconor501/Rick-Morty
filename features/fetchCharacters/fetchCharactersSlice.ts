@@ -7,6 +7,12 @@ export interface Characters {
   image:string;
   species:string;
   gender:string;
+  location: {
+    name: string;
+  }
+  origin: {
+    name: string;
+  }
 }
 
 export interface CharactersResponse {
