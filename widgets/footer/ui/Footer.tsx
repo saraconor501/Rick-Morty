@@ -1,33 +1,5 @@
 'use client'
 import Link from "next/link"
-
-type ListItem = {
-  id: number,
-  name: string,
-  value: number,
-  path: string,
-}
-
-const list: ListItem[] = [
-  {
-    id: 1,
-    name: 'characters',
-    value: 826,
-    path: '/characters'
-  },
-  {
-    id: 2,
-    name: 'locations',
-    value: 126,
-    path:'/locations',
-  },
-  {
-    id: 3,
-    name: 'episodes',
-    value: 51,
-    path: '/'
-  },
-]
 import { Footerlist } from "../model/titles"
 import { useGetCharacterQuery } from "@/features/fetchCharacters/fetchCharactersSlice"
 
