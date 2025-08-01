@@ -12,7 +12,13 @@ const CharactersList = () => {
 
   useEffect(() => {
     if (data?.results) {
-      setAllCharacters((prev) => [...prev, ...data.results])
+      setAllCharacters((prev) => {
+        const all = [...prev, ...data.results]
+        const unique = all.filter(
+          (item, index, self) => index === self.findIndex((t) => t.id === item.id)
+        )
+        return unique
+      })
     }
   }, [data])
 
@@ -23,9 +29,7 @@ const CharactersList = () => {
   return (
     <div className='max-w-[1440px] mx-auto my-[40px]'>
       <div className={` ${!isFetching ? 'grid grid-cols-8 gap-4 mx-auto' : ''}`}>
-        {isFetching ? (
-          <div className='text-[44px] text-white mx-auto w-[123px]'>loading...</div>
-        ):(
+        {
         allCharacters.map((char) => (
           <div className='flex-auto' key={char.id}>
             <Image
@@ -37,7 +41,7 @@ const CharactersList = () => {
             />
             <h2 className='text-yellow-600'>{char.name}</h2>
           </div>
-        )))}
+        ))}
       </div>
       {data?.info?.next && (
         <div className='text-center mt-6'>
