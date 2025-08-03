@@ -42,8 +42,11 @@ export const fetchCharacters = createApi({
         url:'character/',
         params: {name, page}
       })
+    }),
+    getCharactersById: builder.query<Characters,number>({
+      query: (id) => `character/${id}`
     })
   })
 })
 
-export const { useGetCharacterQuery } = fetchCharacters
+export const { useGetCharacterQuery, useGetCharactersByIdQuery } = fetchCharacters
