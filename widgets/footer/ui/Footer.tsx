@@ -2,11 +2,6 @@
 import Link from "next/link"
 import { Footerlist } from "../model/titles"
 import { useGetCharacterQuery } from "@/features/fetchCharacters/fetchCharactersSlice"
-import {Footerlist} from "../model/titles"
-import {
-    useGetCharacterQuery
-} from "@/features/fetchCharacters/fetchCharactersSlice"
-
 
 export const Footer = () => {
     const {data} = useGetCharacterQuery({page: 1})
